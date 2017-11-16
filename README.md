@@ -7,7 +7,7 @@ dictionary file that conforms to the dictionary definition language
 
 ## Maintainers
 The ontology is maintained by an international team of volunteer
-Raman specialists.
+Raman specialists associated with the Raman Open Database.
 
 ## Versioning
 The dictionary files are versioned as described in [Semantic
