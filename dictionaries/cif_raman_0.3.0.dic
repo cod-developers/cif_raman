@@ -16,7 +16,7 @@ data_CIF_Raman
     _dictionary.title            CIF_RAMAN
     _dictionary.formalism        'Raman spectroscopy'
     _dictionary.class            Instance
-    _dictionary.version          0.2.2
+    _dictionary.version          0.3.0
     _dictionary.date             2018-01-05
     _dictionary.uri              http://solsa.crystallography.net/rod/cif/dictionaries/cif_raman.dic
     _dictionary.ddl_conformance  3.11.09
