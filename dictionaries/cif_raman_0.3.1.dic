@@ -17,7 +17,7 @@ data_CIF_Raman
     _dictionary.formalism        'Raman spectroscopy'
     _dictionary.class            Instance
     _dictionary.version          0.3.1
-    _dictionary.date             2018-02-22
+    _dictionary.date             2018-02-23
     _dictionary.uri              http://solsa.crystallography.net/rod/cif/dictionaries/cif_raman.dic
     _dictionary.ddl_conformance  3.11.09
     _dictionary.namespace        RamanSpectr
@@ -1209,7 +1209,7 @@ save_raman_measurement_device.microscope_system
     _definition.update           2017-07-03
     _description.text
 ;
-    The type of the measurement device.
+    The microscope system of the measurement device.
 ;
     _name.category_id            raman_measurement_device
     _name.object_id              microscope_system
@@ -1385,10 +1385,11 @@ loop_
 _dictionary_audit.version
 _dictionary_audit.date
 _dictionary_audit.revision
-0.3.1 2018-02-22
+0.3.1 2018-02-23
 ;
  Updating the description text of the
- _raman_measurement_device.direction_polarization data item. A. V.
+ _raman_measurement_device.direction_polarization and the
+ _raman_measurement_device.microscope_system data items. A. V.
 ;
 0.3.0 2018-01-05
 ;
