@@ -927,7 +927,7 @@ save_raman_measurement_device.excitation_laser_type_details
     _alias.definition_id         '_raman_measurement_device_excitation_laser_type_details'
     _definition.scope            Item
     _definition.class            Datum
-    _definition.update           2018-04-06
+    _definition.update           2018-07-27
     _description.common          'excitation laser type details'
     _description.text
 ;
