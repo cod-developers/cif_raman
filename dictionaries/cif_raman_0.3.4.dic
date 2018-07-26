@@ -1,0 +1,1471 @@
+#\#CIF_2.0
+################################################################################
+# $Author$
+# $Date$
+# $Revision$
+# $URL$
+################################################################################
+#                                                                              #
+#                   CIF Dictionary for Raman Spectroscopy                      #
+#                   -------------------------------------                      #
+#                                                                              #
+#  CIF data definitions specifically for Raman Spectroscopy.                   #
+#                                                                              #
+################################################################################
+data_CIF_Raman
+    _dictionary.title            CIF_RAMAN
+    _dictionary.formalism        'Raman spectroscopy'
+    _dictionary.class            Instance
+    _dictionary.version          0.3.3
+    _dictionary.date             2018-04-06
+    _dictionary.uri              http://solsa.crystallography.net/rod/cif/dictionaries/cif_raman.dic
+    _dictionary.ddl_conformance  3.13.1
+    _dictionary.namespace        RamanSpectr
+    _description.text
+;
+    The DICTIONARY group encompassing the definitions of data items for
+    the study of Raman spectroscopy data with the Crystallographic
+    Information Framework (CIF).
+;
+
+save_RAMAN_GROUP
+    _definition.id               RAMAN_GROUP
+    _definition.scope            Category
+    _definition.class            Head
+    _definition.update           2017-04-10
+    _description.text
+;
+    Encompasses groups of categories applicable to Raman spectroscopy data.
+;
+    _name.category_id            CIF_RAMAN
+    _name.object_id              RAMAN_GROUP
+save_
+
+save_RAMAN_DETERMINATION
+    _definition.id               RAMAN_DETERMINATION
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2017-05-08
+    _description.text
+;
+    Data items in the RAMAN_DETERMINATION category record
+    details about the origin of the spectrum data.
+;
+    _name.category_id            RAMAN_GROUP
+    _name.object_id              RAMAN_DETERMINATION
+save_
+
+save_raman_determination.method
+    _definition.id               '_raman_determination.method'
+    loop_
+    _alias.definition_id         '_raman_determination_method'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'determination method'
+    _description.text
+;
+    The name of the method (or a class of methods) that was used to determine
+    the Raman spectrum.
+;
+    _name.category_id            raman_determination
+    _name.object_id              method
+    _type.purpose                State
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    experimental
+;
+ Raman spectrum was determined in a Raman spectrum measurement experiment.
+;
+    theoretical
+;
+ Raman spectrum was determined using theoretical prediction calculations.
+;
+save_
+
+save_RAMAN_COMPLEMENTARY
+    _definition.id               RAMAN_COMPLEMENTARY
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2018-04-06
+    _description.text
+;
+    Data items in the RAMAN_COMPLEMENTARY category record
+    details about the methods that were used to approve the
+    collected Raman spectrum data.
+;
+    _name.category_id            RAMAN_GROUP
+    _name.object_id              RAMAN_COMPLEMENTARY
+    _category.key_id             '_raman_complementary.id'
+    loop_
+    _category_key.name           '_raman_complementary.id'
+save_
+
+save_raman_complementary.id
+    _definition.id               '_raman_complementary.id'
+    loop_
+    _alias.definition_id         '_raman_complementary_id'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'primary key of the category'
+    _description.text
+;
+    Unique identifier asigned to a set of data items belonging to the
+    RAMAN_COMPLEMENTARY category.
+;
+    _name.category_id            raman_complementary
+    _name.object_id              id
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Index
+save_
+
+save_raman_complementary.method
+    _definition.id               '_raman_complementary.method'
+    loop_
+    _alias.definition_id         '_raman_complementary_method'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'spectrum approval method'
+    _description.text
+;
+    The name of the method that was used to approve the spectrum.
+;
+    _name.category_id            raman_complementary
+    _name.object_id              method
+    _type.purpose                State
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    XRD                         'X-ray diffraction.'
+    EDX                         'Energy dispersive X-ray.'
+    XRF                         'X-ray fluorescence.'
+    SIMS                        'Secondary ion mass spectrometry.'
+    FTIR                        'Fourier transform infrared spectroscopy.'
+    NIR                         'Near infrared.'
+    Mössbauer                   'Mössbauer spectroscopy.'
+    chemical_analysis           'Chemical analysis.'
+    other                       'Determined by a technique not in this list.'
+save_
+
+save_raman_complementary.method_details
+    _definition.id               '_raman_complementary.method_details'
+    loop_
+    _alias.definition_id         '_raman_complementary_method_details'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'spectrum approval method details'
+    _description.text
+;
+    Human-readable description of the method used given as
+    the _raman_complementary.method data item value.
+;
+    _name.category_id            raman_complementary
+    _name.object_id              method_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_RAMAN_PREDICTION
+    _definition.id               RAMAN_PREDICTION
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2018-04-06
+    _description.text
+;
+    Data items in the RAMAN_PREDICTION category record
+    the results of the Raman spectrum predictions.
+;
+    _name.category_id            RAMAN_GROUP
+    _name.object_id              RAMAN_PREDICTION
+    _category.key_id             '_raman_prediction.id'
+    loop_
+    _category_key.name           '_raman_prediction.id'
+save_
+
+save_raman_prediction.id
+    _definition.id               '_raman_prediction.id'
+    loop_
+    _alias.definition_id         '_raman_prediction_id'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'primary key of the category'
+    _description.text
+;
+    Unique identifier asigned to a set of data items belonging to the
+    RAMAN_PREDICTION category.
+;
+    _name.category_id            raman_prediction
+    _name.object_id              id
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Index
+save_
+
+save_raman_prediction.method
+    _definition.id               '_raman_prediction.method'
+    loop_
+    _alias.definition_id         '_raman_prediction_method'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'active band prediction method'
+    _description.text
+;
+    The analysis method used to predict the active bands.
+;
+    _name.category_id            raman_prediction
+    _name.object_id              method
+    _type.purpose                State
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    factor_group_theory          'Factor group theory.'
+    DFT                          'Density functional theory.'
+    DFPT                         'Density functional perturbation theory.'
+    other                        'Determined by a technique not in this list.'
+save_
+
+save_raman_prediction.method_details
+    _definition.id               '_raman_prediction.method_details'
+    loop_
+    _alias.definition_id         '_raman_prediction_method_details'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'active band prediction method details'
+    _description.text
+;
+    Human-readable description of the method used given as
+    the _raman_prediction.method data item value.
+;
+    _name.category_id            raman_prediction
+    _name.object_id              method_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_prediction.active_bands
+    _definition.id               '_raman_prediction.active_bands'
+    loop_
+    _alias.definition_id         '_raman_prediction_active_bands'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'predicted active bands'
+    _description.text
+;
+    Machine parsable expression of the predicted active bands.
+;
+    _name.category_id            raman_prediction
+    _name.object_id              active_bands
+    _type.purpose                Encode # implies the text is machine parsable
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_prediction.mode_count
+    _definition.id               '_raman_prediction.mode_count'
+    loop_
+    _alias.definition_id         '_raman_prediction_mode_count'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'predicted active band mode count'
+    _description.text
+;
+    The number of predicted active band modes.
+;
+    _name.category_id            raman_prediction
+    _name.object_id              mode_count
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Integer
+    _enumeration.range           0.:
+save_
+
+save_RAMAN_SPECTRUM
+    _definition.id               RAMAN_SPECTRUM
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2017-04-10
+    _description.text
+;
+    Data items in the RAMAN_SPECTRUM category record
+    the results of the Raman spectrum measurements.
+;
+    _name.category_id            RAMAN_GROUP
+    _name.object_id              RAMAN_SPECTRUM
+    _category.key_id             '_raman_spectrum.raman_shift'
+    loop_
+    _category_key.name           '_raman_spectrum.raman_shift'
+save_
+
+save_raman_spectrum.raman_shift
+    _definition.id               '_raman_spectrum.raman_shift'
+    loop_
+    _alias.definition_id         '_raman_spectrum_raman_shift'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'Raman shift'
+    _description.text
+;
+    The difference between the measured frequency of scattered light
+    and the incident light beam.
+;
+    _name.category_id            raman_spectrum
+    _name.object_id              raman_shift
+    _type.purpose                Measurand
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  reciprocal_centimetres
+save_
+
+save_raman_spectrum.intensity
+    _definition.id               '_raman_spectrum.intensity'
+    loop_
+    _alias.definition_id         '_raman_spectrum_intensity'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'spectrum intensity'
+    _description.text
+;
+    The final intensity of the associated Raman shift after the background
+    subtraction and baseline correction operations. It is equal to the
+    _raman_spectrum.raw_intensity data item value if neither background
+    subtraction nor baseline correction operations were carried out.
+;
+    _name.category_id            raman_spectrum
+    _name.object_id              intensity
+    _type.purpose                Measurand
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  arbitrary_units
+save_
+
+save_raman_spectrum.raw_intensity
+    _definition.id               '_raman_spectrum.raw_intensity'
+    loop_
+    _alias.definition_id         '_raman_spectrum_raw_intensity'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'spectrum raw intensity'
+    _description.text
+;
+    The intensity of the associated Raman shift before applying the
+    background subtraction or baseline correction. This is the value
+    that is received directly from the measuring device.
+;
+    _name.category_id            raman_spectrum
+    _name.object_id              raw_intensity
+    _type.purpose                Measurand
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  arbitrary_units
+save_
+
+save_raman_spectrum.intensity_background
+    _definition.id               '_raman_spectrum.intensity_background'
+    loop_
+    _alias.definition_id         '_raman_spectrum_intensity_background'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'intensity background'
+    _description.text
+;
+    The intensity background subtraction value of the associated Raman shift.
+;
+    _name.category_id            raman_spectrum
+    _name.object_id              intensity_background
+    _type.purpose                Measurand
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  arbitrary_units
+save_
+
+save_raman_spectrum.intensity_baseline
+    _definition.id               '_raman_spectrum.intensity_baseline'
+    loop_
+    _alias.definition_id         '_raman_spectrum_intensity_baseline'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'intensity baseline'
+    _description.text
+;
+    The intensity baseline correction value of the associated Raman shift.
+;
+    _name.category_id            raman_spectrum
+    _name.object_id              intensity_baseline
+    _type.purpose                Measurand
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  arbitrary_units
+save_
+
+save_RAMAN_MEASUREMENT
+    _definition.id               RAMAN_MEASUREMENT
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2017-04-10
+    _description.text
+;
+    The CATEGORY of data items that specify the overall spectral
+    measurement information.
+;
+    _name.category_id            RAMAN_GROUP
+    _name.object_id              RAMAN_MEASUREMENT
+save_
+
+save_raman_measurement.environment
+    _definition.id               '_raman_measurement.environment'
+    loop_
+    _alias.definition_id         '_raman_measurement_environment'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'measurement environment type'
+    _description.text
+;
+    The environment that the measurement was conducted in.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              environment
+    _type.purpose                State
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    air                          'Air.'
+    reducing_conditions          'Reducing conditions.'
+    other                        'Environment not in this list.'
+    _enumeration.default         air
+save_
+
+save_raman_measurement.environment_details
+    _definition.id               '_raman_measurement.environment_details'
+    loop_
+    _alias.definition_id         '_raman_measurement_environment_details'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'measurement environment details'
+    _description.text
+;
+    Human-readable description of the measurement environment given as
+    the _raman_measurement.environment data item value.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              environment_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement.datetime_initiated
+    _definition.id               '_raman_measurement.datetime_initiated'
+    loop_
+    _alias.definition_id         '_raman_measurement_datetime_initiated'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'measurement initiation timestamp'
+    _description.text
+;
+    The date and time (timestamp) recorded at the start of the measurement
+    experiment. The timestamp should preferably be expressed as specified
+    in RFC 3339, however, a date only time (YYYY-MM-DD) is also acceptable.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              datetime_initiated
+    _type.purpose                Describe
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               DateTime
+    loop_
+    _description_example.case
+    _description_example.detail
+    2015-10-21
+;
+ The experiment was initiated on October 21, 2015
+;
+    2017-10-23T13:30:45.42Z
+;
+ The experiment was initiated on October 22, 2017 at 13:30:45.42 in UTC.
+;
+save_
+
+save_raman_measurement.datetime_terminated
+    _definition.id               '_raman_measurement.datetime_terminated'
+    loop_
+    _alias.definition_id         '_raman_measurement_datetime_terminated'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'measurement termination timestamp'
+    _description.text
+;
+    The date and time (timestamp) recorded at the end of the measurement
+    experiment. The timestamp should preferably be expressed as specified
+    in RFC 3339, however, a date only time (YYYY-MM-DD) is also acceptable.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              datetime_terminated
+    _type.purpose                Describe
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               DateTime
+    loop_
+    _description_example.case
+    _description_example.detail
+    2015-10-21
+;
+ The experiment was terminated on October 21, 2015
+;
+    2017-10-23T13:30:45.42Z
+;
+ The experiment was terminated on October 22, 2017 at 13:30:45.42 in UTC.
+;
+save_
+
+save_raman_measurement.pressure
+    _definition.id               '_raman_measurement.pressure'
+    loop_
+    _alias.definition_id         '_raman_measurement_pressure'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'measurement pressure'
+    _description.text
+;
+    The pressure at which the sample was measured.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              pressure
+    _type.purpose                Measurand
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                  kilopascals
+save_
+
+save_raman_measurement.temperature
+    _definition.id               '_raman_measurement.temperature'
+    loop_
+    _alias.definition_id         '_raman_measurement_temperature'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'measurement temperature'
+    _description.text
+;
+    The temperature at which the sample was measured.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              temperature
+    _type.purpose                Measurand
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                  kelvins
+save_
+
+save_raman_measurement.background_subtraction
+    _definition.id               '_raman_measurement.background_subtraction'
+    loop_
+    _alias.definition_id         '_raman_measurement_background_subtraction'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'background subtraction flag'
+    _description.text
+;
+    Code that specifies if the background subtraction has been applied.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              background_subtraction
+    _type.purpose                State
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    no                           'Background subtraction was not applied.'
+    n                            'Abbreviation for "no".'
+    yes                          'Background subtraction was applied.'
+    y                            'Abbreviation for "yes".'
+save_
+
+save_raman_measurement.background_subtraction_details
+    _definition.id               '_raman_measurement.background_subtraction_details'
+    loop_
+    _alias.definition_id         '_raman_measurement_background_subtraction_details'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'background subtraction details'
+    _description.text
+;
+    Human-readable description of the background subtraction that has been
+    applied.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              background_subtraction_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement.baseline_correction
+    _definition.id               '_raman_measurement.baseline_correction'
+    loop_
+    _alias.definition_id         '_raman_measurement_baseline_correction'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'baseline correction flag'
+    _description.text
+;
+    Code that specifies if the baseline correction has been applied.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              baseline_correction
+    _type.purpose                State
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    no                           'Baseline correction was not applied.'
+    n                            'Abbreviation for "no".'
+    yes                          'Baseline correction was applied.'
+    y                            'Abbreviation for "yes".'
+save_
+
+save_raman_measurement.baseline_correction_details
+    _definition.id               '_raman_measurement.baseline_correction_details'
+    loop_
+    _alias.definition_id         '_raman_measurement_baseline_correction_details'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'baseline correction details'
+    _description.text
+;
+    Human-readable description of the baseline correction that has been applied.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              baseline_correction_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement.integration_time
+    _definition.id               '_raman_measurement.integration_time'
+    loop_
+    _alias.definition_id         '_raman_measurement_integration_time'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'integration time'
+    _description.text
+;
+    The exposure time spent acquiring a single Raman spectrum.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              integration_time
+    _type.purpose                Number
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                  seconds
+save_
+
+save_raman_measurement.range_min
+    _definition.id               '_raman_measurement.range_min'
+    loop_
+    _alias.definition_id         '_raman_measurement_range_min'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'spectrum range minimum'
+    _description.text
+;
+    The minimum of the Raman spectrum range.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              range_min
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  reciprocal_centimetres
+save_
+
+save_raman_measurement.range_max
+    _definition.id               '_raman_measurement.range_max'
+    loop_
+    _alias.definition_id         '_raman_measurement_range_max'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'spectrum range maximum'
+    _description.text
+;
+    The maximum of the Raman spectrum range.
+;
+    _name.category_id            raman_measurement
+    _name.object_id              range_max
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _units.code                  reciprocal_centimetres
+save_
+
+save_RAMAN_MEASUREMENT_DEVICE
+    _definition.id               RAMAN_MEASUREMENT_DEVICE
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2017-04-18
+    _description.text
+;
+    The CATEGORY of data items that specify the Raman measurement device
+    information.
+;
+    _name.category_id            RAMAN_MEASUREMENT
+    _name.object_id              RAMAN_MEASUREMENT_DEVICE
+save_
+
+save_raman_measurement_device.location
+    _definition.id               '_raman_measurement_device.location'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_location'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'device physical location'
+    _description.text
+;
+    The physical location of the device at the time of the measurement.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              location
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement_device.company
+    _definition.id               '_raman_measurement_device.company'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_company'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'device company'
+    _description.text
+;
+    The name of the company that produced the measuring device.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              company
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement_device.model
+    _definition.id               '_raman_measurement_device.model'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_model'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'device model'
+    _description.text
+;
+    The model of the the measuring device.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              model
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement_device.serial_number
+    _definition.id               '_raman_measurement_device.serial_number'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_serial_number'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'device serial number'
+    _description.text
+;
+    The serial number of the the measuring device.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              serial_number
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement_device.details
+    _definition.id               '_raman_measurement_device.details'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_details'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'device details'
+    _description.text
+;
+    Human-readable description of the measurement device.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement_device.excitation_laser_type
+    _definition.id               '_raman_measurement_device.excitation_laser_type'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_excitation_laser_type'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'excitation laser type'
+    _description.text
+;
+    The type of measurement device excitation laser.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              excitation_laser_type
+    _type.purpose                State
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    argon-krypton                'Argon-krypton laser.'
+    argon                        'Argon laser.'
+    krypton                      'Krypton laser.'
+    helium-neon                  'Helium-neon laser.'
+    xenon                        'Xenon laser.'
+    nitrogen                     'Nitrogen laser.'
+    excimer                      'Excimer laser.'
+    helium-cadium                'Helium-cadium laser.'
+    helium-mercury               'Helium-mercury laser.'
+    helium-selenium              'Helium-selenium laser.'
+    helium-silver                'Helium-silver laser.'
+    strontium_vapor              'Strontium vapor laser.'
+    gold_vapor                   'Gold vapor laser.'
+    manganese                    'Manganese laser.'
+    ruby                         'Ruby laser.'
+    titanium-sapphire            'Titanium-sapphire laser.'
+    cerium                       'Cerium laser.'
+    chromium                     'Chromium laser.'
+    other                        'Type of excitation laser not in this list.'
+save_
+
+save_raman_measurement_device.excitation_laser_type_details
+    _definition.id               '_raman_measurement_device.excitation_laser_type_details'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_excitation_laser_type_details'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'excitation laser type details'
+    _description.text
+;
+    Human-readable description of the measurement device excitation laser type
+    given as the _raman_measurement_device.excitation_laser_type data item value.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              excitation_laser_type_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement_device.excitation_laser_wavelength
+    _definition.id               '_raman_measurement_device.excitation_laser_wavelength'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_excitation_laser_wavelength'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'excitation laser wavelength'
+    _description.text
+;
+    The wavelength of the measurement device excitation laser.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              excitation_laser_wavelength
+    _type.purpose                Number
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.:
+    _units.code                  nanometres
+save_
+
+save_raman_measurement_device.resolution
+    _definition.id               '_raman_measurement_device.resolution'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_resolution'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'device resolution'
+    _description.text
+;
+    The resolution of the measurement device.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              resolution
+    _type.purpose                Number
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.:
+    _units.code                  reciprocal_centimetres
+save_
+
+save_raman_measurement_device.configuration
+    _definition.id              '_raman_measurement_device.configuration'
+    loop_
+    _alias.definition_id        '_raman_measurement_device_configuration'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'device configuration'
+    _description.text
+;
+    The configuration of the measurement device.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              configuration
+    _type.purpose                State
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    simple                      Simple.
+    triple                      Triple.
+    other                       'Type of configuration not in this list.'
+save_
+
+save_raman_measurement_device.configuration_details
+    _definition.id               '_raman_measurement_device.configuration_details'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_configuration_details'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'device configuration details'
+    _description.text
+;
+    Human-readable description of the device configuration given as the
+    _raman_measurement_device.configuration data item value.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              configuration_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement_device.power_on_sample
+    _definition.id               '_raman_measurement_device.power_on_sample'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_power_on_sample'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'power on sample'
+    _description.text
+;
+    The power that was used on the sample by the measurement device.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              power_on_sample
+    _type.purpose                Number
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.:
+    _units.code                  milliwatts
+save_
+
+save_raman_measurement_device.direction_polarization
+    _definition.id               '_raman_measurement_device.direction_polarization'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_direction_polarization'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'propagation and polarization directions'
+    _description.text
+;
+    Propagation and polarization directions of the measurement device in
+    Porto's notation. This notation expresses the orientation of the crystal
+    frame with respect to the polarization directions of the laser for both
+    the exciting and the analyzed beams.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              direction_polarization
+    _type.purpose                State
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    unoriented
+;
+ Unoriented.
+;
+    Z(XX)Z
+;
+ Laser polarized parallel to the x axis; analyzer set to pass the x axis
+ polarized light.
+;
+    Z(YY)Z
+;
+ Laser polarized parallel to the y axis; analyzer set to pass the y axis
+ polarized light.
+;
+    Z(XY)Z
+;
+ Laser polarized parallel to the x axis; analyzer set to pass the y axis
+ polarized light.
+;
+    Z(YX)Z
+;
+ Laser polarized parallel to the y axis; analyzer set to pass the x axis
+ polarized light.
+;
+    X(ZZ)X
+;
+ Laser polarized parallel to the z axis; analyzer set to pass the z axis
+ polarized light.
+;
+    X(YY)X
+;
+ Laser polarized parallel to the y axis; analyzer set to pass the y axis
+ polarized light.
+;
+    X(ZY)X
+;
+ Laser polarized parallel to the z axis; analyzer set to pass the y axis
+ polarized light.
+;
+    X(YZ)X
+;
+ Laser polarized parallel to the y axis; analyzer set to pass the z axis
+ polarized light.
+;
+    Y(XX)Y
+;
+ Laser polarized parallel to the x axis; analyzer set to pass the x axis
+ polarized light.
+;
+    Y(ZZ)Y
+;
+ Laser polarized parallel to the z axis; analyzer set to pass the z axis
+ polarized light.
+;
+    Y(XZ)Y
+;
+ Laser polarized parallel to the x axis; analyzer set to pass the z axis
+ polarized light.
+;
+    Y(ZX)Y
+;
+ Laser polarized parallel to the z axis; analyzer set to pass the x axis
+ polarized light.
+;
+save_
+
+save_raman_measurement_device.spot_size
+    _definition.id               '_raman_measurement_device.spot_size'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_spot_size'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'spot size'
+    _description.text
+;
+    The spot size of the device.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              spot_size
+    _type.purpose                Number
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.:
+    _units.code                  micrometres
+save_
+
+save_raman_measurement_device.diffraction_grating
+    _definition.id               '_raman_measurement_device.diffraction_grating'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_diffraction_grating'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'diffraction grating'
+    _description.text
+;
+    The diffraction grating of the device.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              diffraction_grating
+    _type.purpose                Measurand
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.:
+    _units.code                  lines_per_millimetre
+save_
+
+save_raman_measurement_device.optics_type
+    _definition.id               '_raman_measurement_device.optics_type'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_optics_type'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'optics type'
+    _description.text
+;
+    The type of the measurement device optics that was used to focus the
+    primary laser beam onto the sample and/or to collect the scattered
+    radiation.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              optics_type
+    _type.purpose                State
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    microscope                   Microscope.
+    optical_fiber                'Optical fiber.'
+    none                         None.
+    other                        'Type of optics not in this list.'
+save_
+
+save_raman_measurement_device.optics_type_details
+    _definition.id               '_raman_measurement_device.optics_type_details'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_optics_type_details'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'optics type details'
+    _description.text
+;
+    Human-readable description of the measurement device type given as
+    the _raman_measurement_device.optics_type data item value.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              optics_type_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement_device.microscope_system
+    _definition.id               '_raman_measurement_device.microscope_system'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_microscope_system'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'microscope system'
+    _description.text
+;
+    The microscope system of the measurement device.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              microscope_system
+    _type.purpose                State
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    dispersive                   Dispersive.
+    FT                           'Fourier transform.'
+    other                        'Type of microscope system not in this list.'
+save_
+
+save_raman_measurement_device.microscope_system_details
+    _definition.id               '_raman_measurement_device.microscope_system_details'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_microscope_system_details'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'microscope system details'
+    _description.text
+;
+    Human-readable description of the microscope system given as
+    the _raman_measurement_device.microscope_system data item value.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              microscope_system_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+save_raman_measurement_device.microscope_objective_magnification
+    _definition.id               '_raman_measurement_device.microscope_objective_magnification'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_microscope_objective_magnification'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'microscope objective magnification'
+    _description.text
+;
+    The magnification of the microscope objective.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              type_microscope_objective
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                  none
+save_
+
+save_raman_measurement_device.microscope_numerical_aperture
+    _definition.id               '_raman_measurement_device.microscope_numerical_aperture'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_microscope_numerical_aperture'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'microscope numerical aperture'
+    _description.text
+;
+    The numerical aperture of the microscope.
+;
+    _name.category_id            raman_measurement_device
+    _name.object_id              microscope_numerical_aperture
+    _type.purpose                Number
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Real
+    _enumeration.range           0.0:
+    _units.code                  none
+save_
+
+save_RAMAN_MEASUREMENT_DEVICE_CALIBRATION
+    _definition.id               RAMAN_MEASUREMENT_DEVICE_CALIBRATION
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2017-04-10
+    _description.text
+;
+    Data items in the RAMAN_MEASUREMENT_DEVICE_CALIBRATION category
+    record details about the calibration of the measuring device.
+;
+    _name.category_id            RAMAN_MEASUREMENT_DEVICE
+    _name.object_id              RAMAN_MEASUREMENT_DEVICE_CALIBRATION
+    _category.key_id             '_raman_measurement_device_calibration.id'
+    loop_
+    _category_key.name           '_raman_measurement_device_calibration.id'
+save_
+
+save_raman_measurement_device_calibration.id
+    _definition.id               '_raman_measurement_device_calibration.id'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_calibration_id'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'primary key of the category'
+    _description.text
+;
+    Unique identifier asigned to a set of data items belonging to the
+    RAMAN_MEASUREMENT_DEVICE_CALIBRATION category.
+;
+    _name.category_id            raman_measurement_device_calibration
+    _name.object_id              id
+    _type.purpose                Key
+    _type.source                 Assigned
+    _type.container              Single
+    _type.contents               Index
+save_
+
+save_raman_measurement_device_calibration.standard
+    _definition.id               '_raman_measurement_device_calibration.standard'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_calibration_standard'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'calibration standard'
+    _description.text
+;
+    Type of material that was used in the calibration of the device.
+;
+    _name.category_id            raman_measurement_device_calibration
+    _name.object_id              standard
+    _type.purpose                State
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Code
+    loop_
+    _enumeration_set.state
+    _enumeration_set.detail
+    silicon_wafer                'Silicon wafer.'
+    diamond                      Diamond.
+    1,4_bis_(2-methylstyryl)_benzene
+;
+ 1,4 bis (2-methylstyryl) benzene.
+;
+    calcite                      Calcite
+    4-acetamidophenol            4-acetamidophenol.
+    benzonitrile                 Benzonitrile.
+    cyclohexane                  Cyclohexane.
+    polystyrene                  Polystyrene.
+    indene                       Indene.
+    neon_lamp                    'Neon lamp.'
+    carbon_tertrachloride        'Carbon tertrachloride.'
+    other                        'Calibration standard material not in this list.'
+save_
+
+save_raman_measurement_device_calibration.standard_details
+    _definition.id               '_raman_measurement_device_calibration.standard_details'
+    loop_
+    _alias.definition_id         '_raman_measurement_device_calibration_standard_details'
+    _definition.scope            Item
+    _definition.class            Datum
+    _definition.update           2018-04-06
+    _description.common          'calibration standard details'
+    _description.text
+;
+    Human-readable description of the material used in the calibration given
+    as the _raman_measurement_device_calibration.standard data item value.
+;
+    _name.category_id            raman_measurement_device_calibration
+    _name.object_id              standard_details
+    _type.purpose                Describe
+    _type.source                 Recorded
+    _type.container              Single
+    _type.contents               Text
+save_
+
+loop_
+_dictionary_audit.version
+_dictionary_audit.date
+_dictionary_audit.revision
+0.3.4 2018-07-27
+;
+ Correcting a data item name in the description of the
+ _raman_measurement_device.excitation_laser_type_details data item. A. V.
+;
+0.3.3 2018-04-06
+;
+ Adding the _description.common data item to all data item definitions to
+ satisfy the DDLm recommendation.
+;
+0.3.2 2018-03-27
+;
+ Changing the content type of the _raman_measurement.datetime_initiated and
+ _raman_measurement.datetime_terminated data items from 'Code' to 'DateTime'.
+;
+0.3.1 2018-02-23
+;
+ Updating the description text of the
+ _raman_measurement_device.direction_polarization and the
+ _raman_measurement_device.microscope_system data items. A. V.
+;
+0.3.0 2018-01-05
+;
+ Renaming the _raman_measurement_device.name data item to
+ _raman_measurement_device.model. Adding the
+ _raman_measurement_device.serial_number and
+ _raman_measurement_device.details data items. A. V.
+;
+0.2.1 2017-11-08
+;
+ Replacing double underscore sequences with a single underscore in save block
+ names to conform to the latests changes in the IUCr dictionaries. A. V.
+;
+0.2.0 2017-11-07
+;
+ Adding the _raman_measurement.datetime_initiated and
+ _raman_measurement.datetime_terminated data items. A. V.
+;
