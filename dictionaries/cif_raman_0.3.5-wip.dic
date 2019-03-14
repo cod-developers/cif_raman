@@ -1474,7 +1474,7 @@ save_raman_theoretical_model.temperature
 ;
     The temperature at which the sample was measured.
 ;
-    _name.category_id           raman_theoretical_spectrum
+    _name.category_id           raman_theoretical_model
     _name.object_id             temperature
     _type.purpose               Number
     _type.source                Recorded
