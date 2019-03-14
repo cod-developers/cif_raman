@@ -1455,7 +1455,7 @@ save_raman_theoretical_model.pressure
 ;
     _name.category_id           raman_theoretical_model
     _name.object_id             pressure
-    _type.purpose               calculated
+    _type.purpose               Number
     _type.source                Recorded
     _type.container             Single
     _type.contents              Real
@@ -1476,7 +1476,7 @@ save_raman_theoretical_model.temperature
 ;
     _name.category_id           raman_theoretical_spectrum
     _name.object_id             temperature
-    _type.purpose               calculated
+    _type.purpose               Number
     _type.source                Recorded
     _type.container             Single
     _type.contents              Real
@@ -1534,8 +1534,8 @@ save_raman_theoretical_mode.shift
     The calculated modes frequency.
 ;
     _name.category_id           raman_theoretical_mode
-    _name.object_id             mode_shift
-    _type.purpose               calculated
+    _name.object_id             shift
+    _type.purpose               Number
     _type.source                Recorded
     _type.container             Single
     _type.contents              Real
@@ -1554,7 +1554,7 @@ save_raman_theoretical_mode.symmetry
     The symmetry of the frequency calculated modes.
 ;
     _name.category_id           raman_theoretical_mode
-    _name.object_id             mode_symmetry
+    _name.object_id             symmetry
     _type.purpose               Encode # implies the text is machine parsable
     _type.source                Assigned
     _type.container             Single
@@ -1573,8 +1573,8 @@ save_raman_theoretical_mode.intensity
     The final intensity of the associated Raman mode shift.
 ;
     _name.category_id           raman_theoretical_mode
-    _name.object_id             mode_intensity
-    _type.purpose               calculated
+    _name.object_id             intensity
+    _type.purpose               Number
     _type.source                Recorded
     _type.container             Single
     _type.contents              Real
@@ -1612,7 +1612,7 @@ save_raman_spectrum.raman_shift
 ;
     _name.category_id           raman_theoretical_spectrum
     _name.object_id             raman_shift
-    _type.purpose               calculated
+    _type.purpose               Number
     _type.source                Recorded
     _type.container             Single
     _type.contents              Real
@@ -1632,7 +1632,7 @@ save_raman_theoretical_spectrum.intensity
 ;
     _name.category_id           raman_theoretical_spectrum
     _name.object_id             intensity
-    _type.purpose               calculated
+    _type.purpose               Number
     _type.source                Recorded
     _type.container             Single
     _type.contents              Real
