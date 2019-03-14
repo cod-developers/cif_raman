@@ -1427,7 +1427,20 @@ save_raman_measurement_device_calibration.standard_details
     _type.contents               Text
 save_
 
-# BEGIN
+save_RAMAN_THEORETICAL
+    _definition.id               RAMAN_THEORETICAL
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2019-03-14
+    _description.text
+;
+    Data items in the RAMAN_THEORETICAL category record
+    details about a calculated Raman spectra.
+;
+    _name.category_id            RAMAN_GROUP
+    _name.object_id              RAMAN_THEORETICAL
+save_
+
 save_RAMAN_THEORETICAL_MODEL
     _definition.id               RAMAN_THEORETICAL_MODEL
     _definition.scope            Category
@@ -1438,7 +1451,7 @@ save_RAMAN_THEORETICAL_MODEL
     Data items in the RAMAN_THEORETICAL_MODEL category record the parameters
     used in calculations of the theoretical spectra.
 ;
-    _name.category_id            RAMAN_GROUP
+    _name.category_id            RAMAN_THEORETICAL
     _name.object_id              RAMAN_THEORETICAL_MODEL
 save_
 
@@ -1515,7 +1528,7 @@ save_RAMAN_THEORETICAL_MODE
     Data items in the RAMAN_THEORETICAL_MODE category record details
     about the modes of the theoretical spectra.
 ;
-    _name.category_id            RAMAN_GROUP
+    _name.category_id            RAMAN_THEORETICAL
     _name.object_id              RAMAN_THEORETICAL_MODE
     _category.key_id            '_raman_theoretical_mode.shift'
     loop_
@@ -1591,7 +1604,7 @@ save_RAMAN_THEORETICAL_SPECTRUM
     Data items in the RAMAN_THEORETICAL_SPECTRUM category record the results
     of the calculated Raman spectrum.
 ;
-    _name.category_id            RAMAN_GROUP
+    _name.category_id            RAMAN_THEORETICAL
     _name.object_id              RAMAN_THEORETICAL_SPECTRUM
     _category.key_id            '_raman_theoretical_spectrum.raman_shift'
     loop_
@@ -1639,12 +1652,15 @@ save_raman_theoretical_spectrum.intensity
     _units.code                 arbitrary_units
 save_
 
-#END
-
 loop_
 _dictionary_audit.version
 _dictionary_audit.date
 _dictionary_audit.revision
+0.3.5 2019-03-14
+;
+ Added the RAMAN_THEORETICAL_MODEL, RAMAN_THEORETICAL_MODE and
+ RAMAN_THEORETICAL_SPECTRUM categories. A.V.
+;
 0.3.4 2018-07-27
 ;
  Correcting a data item name in the description of the
