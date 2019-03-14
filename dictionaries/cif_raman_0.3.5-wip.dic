@@ -1428,6 +1428,83 @@ save_raman_measurement_device_calibration.standard_details
 save_
 
 # BEGIN
+save_RAMAN_THEORETICAL_MODEL
+    _definition.id               RAMAN_THEORETICAL_MODEL
+    _definition.scope            Category
+    _definition.class            Set
+    _definition.update           2019-03-14
+    _description.text
+;
+    Data items in the RAMAN_THEORETICAL_MODEL category record the parameters
+    used in calculations of the theoretical spectra.
+;
+    _name.category_id            RAMAN_GROUP
+    _name.object_id              RAMAN_THEORETICAL_MODEL
+save_
+
+save_raman_theoretical_model.pressure
+    _definition.id              '_raman_theoretical_model.pressure'
+    loop_
+    _alias.definition_id        '_raman_theoretical_model_pressure'
+    _definition.scope           Item
+    _definition.class           Datum
+    _definition.update          2019-03-14
+    _description.text
+;
+    The pressure at which the sample was calculated.
+;
+    _name.category_id           raman_theoretical_model
+    _name.object_id             pressure
+    _type.purpose               calculated
+    _type.source                Recorded
+    _type.container             Single
+    _type.contents              Real
+    _enumeration.range          0.0:
+    _units.code                 kilopascals
+save_
+
+save_raman_theoretical_model.temperature
+    _definition.id              '_raman_theoretical_model.temperature'
+    loop_
+    _alias.definition_id        '_raman_theoretical_model_temperature'
+    _definition.scope           Item
+    _definition.class           Datum
+    _definition.update          2019-03-14
+    _description.text
+;
+    The temperature at which the sample was measured.
+;
+    _name.category_id           raman_theoretical_spectrum
+    _name.object_id             temperature
+    _type.purpose               calculated
+    _type.source                Recorded
+    _type.container             Single
+    _type.contents              Real
+    _enumeration.range          0.0:
+    _units.code                 kelvins
+save_
+
+save_raman_theoretical_model.excitation_laser_wavelength
+    _definition.id             '_raman_theoretical_model.excitation_laser_wavelength'
+    loop_
+    _alias.definition_id       '_raman_theoretical_model_excitation_laser_wavelength'
+    _definition.scope          Item
+    _definition.class          Datum
+    _definition.update         2019-03-14
+    _description.text
+;
+    The wavelength of the device excitation laser.
+;
+    _name.category_id          raman_theoretical_model
+    _name.object_id            excitation_laser_wavelength
+    _type.purpose              Number
+    _type.source               Recorded
+    _type.container            Single
+    _type.contents             Real
+    _enumeration.range         0.:
+    _units.code                nanometres
+save_
+
 save_RAMAN_THEORETICAL_SPECTRUM
     _definition.id               RAMAN_THEORETICAL_SPECTRUM
     _definition.scope            Category
@@ -1475,7 +1552,7 @@ save_raman_theoretical_spectrum.intensity
     _definition.update          2019-03-14
     _description.text
 ;
-    The final intensity of the associated Raman shift
+    The final intensity of the associated Raman shift.
 ;
     _name.category_id           raman_theoretical_spectrum
     _name.object_id             intensity
@@ -1534,7 +1611,7 @@ save_raman_theoretical_spectrum.mode_intensity
     _definition.update          2019-03-14
     _description.text
 ;
-    The final intensity of the associated Raman mode shift
+    The final intensity of the associated Raman mode shift.
 ;
     _name.category_id           raman_theoretical_spectrum
     _name.object_id             mode_intensity
@@ -1543,69 +1620,6 @@ save_raman_theoretical_spectrum.mode_intensity
     _type.container             Single
     _type.contents              Real
     _units.code                 arbitrary_units
-save_
-
-save_raman_theoretical_spectrum.pressure
-    _definition.id              '_raman_theoretical_spectrum.pressure'
-    loop_
-    _alias.definition_id        '_raman_theoretical_spectrum_pressure'
-    _definition.scope           Item
-    _definition.class           Datum
-    _definition.update          2019-03-14
-    _description.text
-;
-    The pressure at which the sample was calculated.
-;
-    _name.category_id           raman_theoretical_spectrum
-    _name.object_id             pressure
-    _type.purpose               calculated
-    _type.source                Recorded
-    _type.container             Single
-    _type.contents              Real
-    _enumeration.range          0.0:
-    _units.code                 kilopascals
-save_
-
-save_raman_theoretical_spectrum.temperature
-    _definition.id              '_raman_theoretical_spectrum.temperature'
-    loop_
-    _alias.definition_id        '_raman_theoretical_spectrum_temperature'
-    _definition.scope           Item
-    _definition.class           Datum
-    _definition.update          2019-03-14
-    _description.text
-;
-    The temperature at which the sample was measured.
-;
-    _name.category_id           raman_theoretical_spectrum
-    _name.object_id             temperature
-    _type.purpose               calculated
-    _type.source                Recorded
-    _type.container             Single
-    _type.contents              Real
-    _enumeration.range          0.0:
-    _units.code                 kelvins
-save_
-
-save_raman_theoretical_spectrum_device.excitation_laser_wavelength
-    _definition.id             '_raman_theoretical_spectrum_device.excitation_laser_wavelength'
-    loop_
-    _alias.definition_id       '_raman_theoretical_spectrum_device_excitation_laser_wavelength'
-    _definition.scope          Item
-    _definition.class          Datum
-    _definition.update         2019-03-14
-    _description.text
-;
-    The wavelength of the device excitation laser.
-;
-    _name.category_id          raman_theoretical_spectrum_device
-    _name.object_id            excitation_laser_wavelength
-    _type.purpose              Number
-    _type.source               Recorded
-    _type.container            Single
-    _type.contents             Real
-    _enumeration.range         0.:
-    _units.code                nanometres
 save_
 
 #END
