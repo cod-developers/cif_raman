@@ -1,0 +1,117 @@
+#\#CIF_2.0
+data_0000000
+#
+# BIBLIOGRAPHY
+#
+loop_
+_publ_author_name
+'Petit, S'
+'El Mendili, Y.'
+'Chateigner, D.'
+_publ_section_title
+;
+ Calculated Raman spectrum of Hematite
+;
+_journal_name_full               'Personal communication to ROD'
+_journal_year                    2019
+_chemical_formula_structural     'Fe2 O3'
+_chemical_formula_sum            'Fe2 O3'
+_chemical_name_mineral           Hematite
+_chemical_name_systematic        'iron(III) oxide'
+_space_group_crystal_system      trigonal
+_space_group_IT_number           167
+_space_group_name_Hall           '-R 3 2"c'
+_space_group_name_H-M_alt        'R -3 c :H'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                120
+_cell_formula_units_Z            6
+_cell_length_a                   5.03
+_cell_length_b                   5.03
+_cell_length_c                   13.75
+#
+# TCOD related data items
+#
+_tcod_model                      DFT
+_tcod_software_package           CRYSTAL17
+_tcod_structure_type             crystal-ground-state
+#
+# DFT related data items
+#
+_dft_atom_basisset               pob-DZVPP
+_dft_atom_basisset_citation_id   1
+_dft_BZ_integration_grid_X       8
+_dft_BZ_integration_grid_Y       8
+_dft_BZ_integration_grid_Z       8
+_dft_BZ_integration_method       Monkhorst-Pack
+_dft_cell_magn_spin_moment       0
+_dft_XC_exchange_functional_name hyb_gga_xc_b3lyp
+#
+# Declare that the spectra is indeed a calculated one
+#
+_raman_determination_method      theoretical
+#
+# Theoretical model parameters
+#
+_raman_theoretical_model.temperature 300
+_raman_theoretical_model.pressure 100
+_raman_theoretical_model.excitation_laser_wavelength 785
+loop_
+_citation.id
+_citation.doi
+1 10.1002/jcc.23153
+#
+# Calculated modes
+#
+loop_
+_raman_theoretical_mode.shift
+_raman_theoretical_mode.symmetry
+_raman_theoretical_mode.intensity
+169.8133 Ag 0.01
+226.3711 Ag 459.32
+244.1539 Eg 32.71
+288.4530 Eg 1000.00
+302.0911 Eg 448.93
+418.3299 Eg 874.41
+440.9468 Ag 0.01
+498.9815 Ag 262.85
+614.0775 Eg 618.72
+683.8027 Ag 0.01
+#
+# Calculated spectra
+#
+loop_
+_raman_theoretical_spectrum.raman_shift
+_raman_theoretical_spectrum.intensity
+0.00 0.00
+169.8132 0.00
+169.8133 0.01
+169.8134 0.00
+226.3710 0.0
+226.3711 459.32
+226.3712 0.0
+244.1538 0.0
+244.1539 32.71
+244.1540 0.0
+288.4529 0.00
+288.4530 1000.00
+288.4531 0.00
+302.0910 0.0
+302.0911 448.93
+302.0912 0.0
+418.3298 0.0
+418.3299 874.41
+418.3300 0.0
+440.9467 0.0
+440.9468 0.01
+440.9469 0.0
+498.9814 0.0
+498.9815 262.85
+498.9816 0.0
+614.0774 0.0
+614.0775 618.72
+614.0776 0.0
+683.8026 0.0
+683.8027 0.01
+683.8028 0.0
+888.94 0.0
