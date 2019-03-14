@@ -1505,6 +1505,82 @@ save_raman_theoretical_model.excitation_laser_wavelength
     _units.code                nanometres
 save_
 
+save_RAMAN_THEORETICAL_MODE
+    _definition.id               RAMAN_THEORETICAL_MODE
+    _definition.scope            Category
+    _definition.class            Loop
+    _definition.update           2019-03-14
+    _description.text
+;
+    Data items in the RAMAN_THEORETICAL_MODE category record details
+    about the modes of the theoretical spectra.
+;
+    _name.category_id            RAMAN_GROUP
+    _name.object_id              RAMAN_THEORETICAL_MODE
+    _category.key_id            '_raman_theoretical_mode.shift'
+    loop_
+    _category_key.name          '_raman_theoretical_mode.shift'
+save_
+
+save_raman_theoretical_mode.shift
+    _definition.id              '_raman_theoretical_mode.shift'
+    loop_
+    _alias.definition_id        '_raman_theoretical_mode_shift'
+    _definition.scope           Item
+    _definition.class           Datum
+    _definition.update          2019-03-14
+    _description.text
+;
+    The calculated modes frequency.
+;
+    _name.category_id           raman_theoretical_mode
+    _name.object_id             mode_shift
+    _type.purpose               calculated
+    _type.source                Recorded
+    _type.container             Single
+    _type.contents              Real
+    _units.code                 reciprocal_centimetres
+save_
+
+save_raman_theoretical_mode.symmetry
+    _definition.id              '_raman_theoretical_mode.symmetry'
+    loop_
+    _alias.definition_id        '_raman_theoretical_mode_symmetry'
+    _definition.scope           Item
+    _definition.class           Datum
+    _definition.update          2019-03-14
+    _description.text
+;
+    The symmetry of the frequency calculated modes.
+;
+    _name.category_id           raman_theoretical_mode
+    _name.object_id             mode_symmetry
+    _type.purpose               Encode # implies the text is machine parsable
+    _type.source                Assigned
+    _type.container             Single
+    _type.contents              Text
+save_
+
+save_raman_theoretical_mode.intensity
+    _definition.id              '_raman_theoretical_mode.intensity'
+    loop_
+    _alias.definition_id        '_raman_theoretical_mode_intensity'
+    _definition.scope           Item
+    _definition.class           Datum
+    _definition.update          2019-03-14
+    _description.text
+;
+    The final intensity of the associated Raman mode shift.
+;
+    _name.category_id           raman_theoretical_mode
+    _name.object_id             mode_intensity
+    _type.purpose               calculated
+    _type.source                Recorded
+    _type.container             Single
+    _type.contents              Real
+    _units.code                 arbitrary_units
+save_
+
 save_RAMAN_THEORETICAL_SPECTRUM
     _definition.id               RAMAN_THEORETICAL_SPECTRUM
     _definition.scope            Category
@@ -1556,65 +1632,6 @@ save_raman_theoretical_spectrum.intensity
 ;
     _name.category_id           raman_theoretical_spectrum
     _name.object_id             intensity
-    _type.purpose               calculated
-    _type.source                Recorded
-    _type.container             Single
-    _type.contents              Real
-    _units.code                 arbitrary_units
-save_
-
-save_raman_theoretical_spectrum.mode_shift
-    _definition.id              '_raman_theoretical_spectrum.mode_shift'
-    loop_
-    _alias.definition_id        '_raman_theoretical_spectrum_mode_shift'
-    _definition.scope           Item
-    _definition.class           Datum
-    _definition.update          2019-03-14
-    _description.text
-;
-    The calculated modes frequency.
-;
-    _name.category_id           raman_theoretical_spectrum
-    _name.object_id             mode_shift
-    _type.purpose               calculated
-    _type.source                Recorded
-    _type.container             Single
-    _type.contents              Real
-    _units.code                 reciprocal_centimetres
-save_
-
-save_raman_theoretical_spectrum.mode_symmetry
-    _definition.id              '_raman_theoretical_spectrum.mode_symmetry'
-    loop_
-    _alias.definition_id        '_raman_theoretical_spectrum_mode_symmetry'
-    _definition.scope           Item
-    _definition.class           Datum
-    _definition.update          2019-03-14
-    _description.text
-;
-    The symmetry of the frequency calculated modes.
-;
-    _name.category_id           raman_theoretical_spectrum
-    _name.object_id             mode_symmetry
-    _type.purpose               Encode # implies the text is machine parsable
-    _type.source                Assigned
-    _type.container             Single
-    _type.contents              Text
-save_
-
-save_raman_theoretical_spectrum.mode_intensity
-    _definition.id              '_raman_theoretical_spectrum.mode_intensity'
-    loop_
-    _alias.definition_id        '_raman_theoretical_spectrum_mode_intensity'
-    _definition.scope           Item
-    _definition.class           Datum
-    _definition.update          2019-03-14
-    _description.text
-;
-    The final intensity of the associated Raman mode shift.
-;
-    _name.category_id           raman_theoretical_spectrum
-    _name.object_id             mode_intensity
     _type.purpose               calculated
     _type.source                Recorded
     _type.container             Single
