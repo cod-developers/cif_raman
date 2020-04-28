@@ -16,9 +16,9 @@ data_CIF_Raman
     _dictionary.title            CIF_RAMAN
     _dictionary.formalism        'Raman spectroscopy'
     _dictionary.class            Instance
-    _dictionary.version          0.3.5
-    _dictionary.date             2019-03-14
-    _dictionary.uri              http://solsa.crystallography.net/rod/cif/dictionaries/cif_raman.dic
+    _dictionary.version          0.3.5-dev-1
+    _dictionary.date             2020-04-08
+    _dictionary.uri              https://solsa.crystallography.net/rod/cif/dictionaries/cif_raman/cif_raman_0.3.5-wip.dic
     _dictionary.ddl_conformance  3.13.1
     _dictionary.namespace        RamanSpectr
     _description.text
@@ -1611,13 +1611,13 @@ save_RAMAN_THEORETICAL_SPECTRUM
     _category_key.name          '_raman_theoretical_spectrum.raman_shift'
 save_
 
-save_raman_spectrum.raman_shift
+save_raman_theoretical_spectrum.raman_shift
     _definition.id              '_raman_theoretical_spectrum.raman_shift'
     loop_
     _alias.definition_id        '_raman_theoretical_spectrum_raman_shift'
     _definition.scope           Item
     _definition.class           Datum
-    _definition.update          2019-03-14
+    _definition.update          2020-04-28
     _description.text
 ;
     The difference between the calculated frequency of scattered light and
@@ -1656,10 +1656,10 @@ loop_
 _dictionary_audit.version
 _dictionary_audit.date
 _dictionary_audit.revision
-0.3.5 2019-03-14
+0.3.5-dev-1 2020-04-28
 ;
  Added the RAMAN_THEORETICAL_MODEL, RAMAN_THEORETICAL_MODE and
- RAMAN_THEORETICAL_SPECTRUM categories. A.V.
+ RAMAN_THEORETICAL_SPECTRUM categories. A. V.
 ;
 0.3.4 2018-07-27
 ;
