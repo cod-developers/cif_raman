@@ -19,7 +19,7 @@ data_CIF_Raman
     _dictionary.version          0.3.5-dev-1
     _dictionary.date             2024-04-03
     _dictionary.uri              https://solsa.crystallography.net/rod/cif/dictionaries/cif_raman/cif_raman_0.3.5-wip.dic
-    _dictionary.ddl_conformance  3.13.1
+    _dictionary.ddl_conformance  4.1.0
     _dictionary.namespace        RamanSpectr
     _description.text
 ;
@@ -1702,4 +1702,6 @@ _dictionary_audit.revision
 
  Removed all instances of the _category.key_id attribute since it is no longer
  defined in the newer versions of the DDLm reference dictionary.
+
+ Changed _dictionary.ddl_conformance version to 4.1.0.
 ;
