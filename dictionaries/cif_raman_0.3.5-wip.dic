@@ -124,6 +124,7 @@ save_raman_complementary.id
     _type.container              Single
     _type.contents               Integer
     _enumeration.range           1:
+    _units.code                  none
 save_
 
 save_raman_complementary.method
@@ -215,6 +216,7 @@ save_raman_prediction.id
     _type.container              Single
     _type.contents               Integer
     _enumeration.range           1:
+    _units.code                  none
 save_
 
 save_raman_prediction.method
@@ -1366,6 +1368,7 @@ save_raman_measurement_device_calibration.id
     _type.container              Single
     _type.contents               Integer
     _enumeration.range           1:
+    _units.code                  none
 save_
 
 save_raman_measurement_device_calibration.standard
