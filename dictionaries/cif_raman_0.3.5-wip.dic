@@ -17,7 +17,7 @@ data_CIF_Raman
     _dictionary.formalism        'Raman spectroscopy'
     _dictionary.class            Instance
     _dictionary.version          0.3.5-dev-1
-    _dictionary.date             2020-04-28
+    _dictionary.date             2024-04-03
     _dictionary.uri              https://solsa.crystallography.net/rod/cif/dictionaries/cif_raman/cif_raman_0.3.5-wip.dic
     _dictionary.ddl_conformance  3.13.1
     _dictionary.namespace        RamanSpectr
@@ -111,7 +111,7 @@ save_raman_complementary.id
     _alias.definition_id         '_raman_complementary_id'
     _definition.scope            Item
     _definition.class            Datum
-    _definition.update           2018-04-06
+    _definition.update           2024-04-03
     _description.common          'primary key of the category'
     _description.text
 ;
@@ -123,7 +123,8 @@ save_raman_complementary.id
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Index
+    _type.contents               Integer
+    _enumeration.range           1:
 save_
 
 save_raman_complementary.method
@@ -202,7 +203,7 @@ save_raman_prediction.id
     _alias.definition_id         '_raman_prediction_id'
     _definition.scope            Item
     _definition.class            Datum
-    _definition.update           2018-04-06
+    _definition.update           2024-04-03
     _description.common          'primary key of the category'
     _description.text
 ;
@@ -214,7 +215,8 @@ save_raman_prediction.id
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Index
+    _type.contents               Integer
+    _enumeration.range           1:
 save_
 
 save_raman_prediction.method
@@ -1354,7 +1356,7 @@ save_raman_measurement_device_calibration.id
     _alias.definition_id         '_raman_measurement_device_calibration_id'
     _definition.scope            Item
     _definition.class            Datum
-    _definition.update           2018-04-06
+    _definition.update           2024-04-03
     _description.common          'primary key of the category'
     _description.text
 ;
@@ -1366,7 +1368,8 @@ save_raman_measurement_device_calibration.id
     _type.purpose                Key
     _type.source                 Assigned
     _type.container              Single
-    _type.contents               Index
+    _type.contents               Integer
+    _enumeration.range           1:
 save_
 
 save_raman_measurement_device_calibration.standard
@@ -1695,8 +1698,11 @@ _dictionary_audit.revision
  Correcting a data item name in the description of the
  _raman_measurement_device.excitation_laser_type_details data item. A. V.
 ;
-0.3.5-dev-1 2020-04-28
+0.3.5-dev-1 2024-04-03
 ;
  Added the RAMAN_THEORETICAL_MODEL, RAMAN_THEORETICAL_MODE and
  RAMAN_THEORETICAL_SPECTRUM categories. A. V.
+
+ Changed the content type of multiple data items from 'Index'  to 'Integer'
+ and assigned the appropriate enumeration range if needed.
 ;
