@@ -17,7 +17,7 @@ data_CIF_Raman
     _dictionary.formalism        'Raman spectroscopy'
     _dictionary.class            Instance
     _dictionary.version          0.3.5-dev-1
-    _dictionary.date             2020-04-08
+    _dictionary.date             2020-04-28
     _dictionary.uri              https://solsa.crystallography.net/rod/cif/dictionaries/cif_raman/cif_raman_0.3.5-wip.dic
     _dictionary.ddl_conformance  3.13.1
     _dictionary.namespace        RamanSpectr
@@ -303,7 +303,8 @@ save_raman_prediction.mode_count
     _type.source                 Assigned
     _type.container              Single
     _type.contents               Integer
-    _enumeration.range           0.:
+    _enumeration.range           0:
+    _units.code                  none
 save_
 
 save_RAMAN_SPECTRUM
@@ -1656,31 +1657,15 @@ loop_
 _dictionary_audit.version
 _dictionary_audit.date
 _dictionary_audit.revision
-0.3.5-dev-1 2020-04-28
+0.2.0 2017-11-07
 ;
- Added the RAMAN_THEORETICAL_MODEL, RAMAN_THEORETICAL_MODE and
- RAMAN_THEORETICAL_SPECTRUM categories. A. V.
+ Adding the _raman_measurement.datetime_initiated and
+ _raman_measurement.datetime_terminated data items. A. V.
 ;
-0.3.4 2018-07-27
+0.2.1 2017-11-08
 ;
- Correcting a data item name in the description of the
- _raman_measurement_device.excitation_laser_type_details data item. A. V.
-;
-0.3.3 2018-04-06
-;
- Adding the _description.common data item to all data item definitions to
- satisfy the DDLm recommendation.
-;
-0.3.2 2018-03-27
-;
- Changing the content type of the _raman_measurement.datetime_initiated and
- _raman_measurement.datetime_terminated data items from 'Code' to 'DateTime'.
-;
-0.3.1 2018-02-23
-;
- Updating the description text of the
- _raman_measurement_device.direction_polarization and the
- _raman_measurement_device.microscope_system data items. A. V.
+ Replacing double underscore sequences with a single underscore in save block
+ names to conform to the latest changes in the IUCr dictionaries. A. V.
 ;
 0.3.0 2018-01-05
 ;
@@ -1689,13 +1674,29 @@ _dictionary_audit.revision
  _raman_measurement_device.serial_number and
  _raman_measurement_device.details data items. A. V.
 ;
-0.2.1 2017-11-08
+0.3.1 2018-02-23
 ;
- Replacing double underscore sequences with a single underscore in save block
- names to conform to the latests changes in the IUCr dictionaries. A. V.
+ Updating the description text of the
+ _raman_measurement_device.direction_polarization and the
+ _raman_measurement_device.microscope_system data items. A. V.
 ;
-0.2.0 2017-11-07
+0.3.2 2018-03-27
 ;
- Adding the _raman_measurement.datetime_initiated and
- _raman_measurement.datetime_terminated data items. A. V.
+ Changing the content type of the _raman_measurement.datetime_initiated and
+ _raman_measurement.datetime_terminated data items from 'Code' to 'DateTime'.
+;
+0.3.3 2018-04-06
+;
+ Adding the _description.common data item to all data item definitions to
+ satisfy the DDLm recommendation.
+;
+0.3.4 2018-07-27
+;
+ Correcting a data item name in the description of the
+ _raman_measurement_device.excitation_laser_type_details data item. A. V.
+;
+0.3.5-dev-1 2020-04-28
+;
+ Added the RAMAN_THEORETICAL_MODEL, RAMAN_THEORETICAL_MODE and
+ RAMAN_THEORETICAL_SPECTRUM categories. A. V.
 ;
