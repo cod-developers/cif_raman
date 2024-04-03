@@ -91,7 +91,7 @@ save_RAMAN_COMPLEMENTARY
     _definition.id               RAMAN_COMPLEMENTARY
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2018-04-06
+    _definition.update           2024-04-03
     _description.text
 ;
     Data items in the RAMAN_COMPLEMENTARY category record
@@ -100,7 +100,6 @@ save_RAMAN_COMPLEMENTARY
 ;
     _name.category_id            RAMAN_GROUP
     _name.object_id              RAMAN_COMPLEMENTARY
-    _category.key_id             '_raman_complementary.id'
     loop_
     _category_key.name           '_raman_complementary.id'
 save_
@@ -184,7 +183,7 @@ save_RAMAN_PREDICTION
     _definition.id               RAMAN_PREDICTION
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2018-04-06
+    _definition.update           2024-04-03
     _description.text
 ;
     Data items in the RAMAN_PREDICTION category record
@@ -192,7 +191,6 @@ save_RAMAN_PREDICTION
 ;
     _name.category_id            RAMAN_GROUP
     _name.object_id              RAMAN_PREDICTION
-    _category.key_id             '_raman_prediction.id'
     loop_
     _category_key.name           '_raman_prediction.id'
 save_
@@ -313,7 +311,7 @@ save_RAMAN_SPECTRUM
     _definition.id               RAMAN_SPECTRUM
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2017-04-10
+    _definition.update           2024-04-03
     _description.text
 ;
     Data items in the RAMAN_SPECTRUM category record
@@ -321,7 +319,6 @@ save_RAMAN_SPECTRUM
 ;
     _name.category_id            RAMAN_GROUP
     _name.object_id              RAMAN_SPECTRUM
-    _category.key_id             '_raman_spectrum.raman_shift'
     loop_
     _category_key.name           '_raman_spectrum.raman_shift'
 save_
@@ -1337,7 +1334,7 @@ save_RAMAN_MEASUREMENT_DEVICE_CALIBRATION
     _definition.id               RAMAN_MEASUREMENT_DEVICE_CALIBRATION
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2017-04-10
+    _definition.update           2024-04-03
     _description.text
 ;
     Data items in the RAMAN_MEASUREMENT_DEVICE_CALIBRATION category
@@ -1345,7 +1342,6 @@ save_RAMAN_MEASUREMENT_DEVICE_CALIBRATION
 ;
     _name.category_id            RAMAN_MEASUREMENT_DEVICE
     _name.object_id              RAMAN_MEASUREMENT_DEVICE_CALIBRATION
-    _category.key_id             '_raman_measurement_device_calibration.id'
     loop_
     _category_key.name           '_raman_measurement_device_calibration.id'
 save_
@@ -1526,7 +1522,7 @@ save_RAMAN_THEORETICAL_MODE
     _definition.id               RAMAN_THEORETICAL_MODE
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2019-03-14
+    _definition.update           2024-04-03
     _description.text
 ;
     Data items in the RAMAN_THEORETICAL_MODE category record details
@@ -1534,7 +1530,6 @@ save_RAMAN_THEORETICAL_MODE
 ;
     _name.category_id            RAMAN_THEORETICAL
     _name.object_id              RAMAN_THEORETICAL_MODE
-    _category.key_id            '_raman_theoretical_mode.shift'
     loop_
     _category_key.name          '_raman_theoretical_mode.shift'
 save_
@@ -1602,7 +1597,7 @@ save_RAMAN_THEORETICAL_SPECTRUM
     _definition.id               RAMAN_THEORETICAL_SPECTRUM
     _definition.scope            Category
     _definition.class            Loop
-    _definition.update           2019-03-14
+    _definition.update           2024-04-03
     _description.text
 ;
     Data items in the RAMAN_THEORETICAL_SPECTRUM category record the results
@@ -1610,7 +1605,6 @@ save_RAMAN_THEORETICAL_SPECTRUM
 ;
     _name.category_id            RAMAN_THEORETICAL
     _name.object_id              RAMAN_THEORETICAL_SPECTRUM
-    _category.key_id            '_raman_theoretical_spectrum.raman_shift'
     loop_
     _category_key.name          '_raman_theoretical_spectrum.raman_shift'
 save_
@@ -1705,4 +1699,7 @@ _dictionary_audit.revision
 
  Changed the content type of multiple data items from 'Index'  to 'Integer'
  and assigned the appropriate enumeration range if needed.
+
+ Removed all instances of the _category.key_id attribute since it is no longer
+ defined in the newer versions of the DDLm reference dictionary.
 ;
